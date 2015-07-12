@@ -11,6 +11,7 @@ epc <- read.csv.sql("household_power_consumption.txt", header=TRUE, sep = ';',
 
 
 ## Converting dates
+epc$Date <- as.Date(epc$Date, format = "%d/%m/%Y")
 DateTime <- paste(as.Date(epc$Date), epc$Time)
 epc$Datetime <- as.POSIXct(DateTime)
 
